@@ -49,5 +49,6 @@
 
 ## Sayeahooo...
 
+- NN 3592 deploy as gh-pages
 - NN 3507 pub. lesson
 - NN 3489 init. 

@@ -1,4 +1,4 @@
-wiki-name: PythoniCamp Static Wiki # Set this to whatever you want
+wiki-name: 101Camp Static Wiki # Set this to whatever you want
 #google-analytics: UA-2331528-6
 
 ## ...other settings...
@@ -18,7 +18,7 @@ hide-prefix: "."
 wiki-dir: "wiki"
 static-dir: "_static"
 #html-dir: ".html"
-html-dir: "public"
+html-dir: "docs"
 template-dir: "_templates"
 temp-dir: ".tmp"
 

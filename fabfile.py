@@ -44,7 +44,7 @@ def _gh_pages():
 
 def pub():
     build()
-    #_CNAME()
+    _CNAME()
     _gh_pages()
 
 

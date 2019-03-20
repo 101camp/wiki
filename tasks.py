@@ -9,16 +9,12 @@ env = {'deploy_path':'docs'
     ,'static_path': '_static'
 } 
 
-@task()
-def hollo(c):
-    c.run('echo hello', hide=False, warn=True)
-    c.run('whoami')
 
 @task 
 def bu(c):
     c.run('pwd')
     c.run('markdoc build', hide=False, warn=True)
-    c.run('rsync -avzP4 {static_path}/media/ {deploy_path}/media/ ')
+    c.run('rsync -avzP4 {static_path}/media/ {deploy_path}/media/ '.format(**env))
 
 @task 
 def pu(c):
@@ -39,8 +35,7 @@ def ccname(c):
     c.run('ls docs/', hide=False, warn=True)
     c.run('pwd')
 
-
-@task 
+#@task 
 def gh(c):
     _ts = '{}.{}'.format(time.strftime('%y%m%d %H%M %S')
                      , str(time.time()).split('.')[1][:3] )
@@ -59,8 +54,12 @@ def gh(c):
 @task 
 def pub(c):
     bu(c)
-    pu(c)
     ccname(c)
-    gh(c)
+    pu(c)
+    #gh(c)
 
+#@task()
+def hollo(c):
+    c.run('echo hello', hide=False, warn=True)
+    c.run('whoami')
 
