@@ -1,0 +1,37 @@
+wiki-name: PythoniCamp Static Wiki # Set this to whatever you want
+#google-analytics: UA-2331528-6
+
+## ...other settings...
+disqus_shortname: wikizoomquietio
+author_name: Zoom Quiet
+author_display_name: Zoom.Quiet
+author_gravatar: 26221c6d3cedc50c506aa699e2765252
+author_display_gravatar: https://avatars2.githubusercontent.com/u/22494?v=4?v=3&s=88
+author_email: i@zoomquiet.io
+author_web: http://zoomquiet.io
+author_github: ZoomQuiet
+author_coderwall: zoomquiet
+author_gittip: https://gratipay.com/~ZoomQuiet/
+
+# Directories
+hide-prefix: "."
+wiki-dir: "wiki"
+static-dir: "_static"
+#html-dir: ".html"
+html-dir: "public"
+template-dir: "_templates"
+temp-dir: ".tmp"
+
+# Building
+document-extensions: [.md, .markdown]
+generate-listing: always
+listing-filename: "_list.html"
+use-default-static: true
+use-default-templates: true
+
+# Rendering
+markdown:
+  safe-mode: false
+  output-format: xhtml1
+  extensions: [codehilite, def_list, headerid, toc, wikilinks]
+

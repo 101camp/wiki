@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      {% block xmlns -%}
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      {%- endblock %}>
+  
+  {% import "macros/html" as html -%}
+  {% import "macros/crumbs" as breadcrumbs with context -%}
+  
+  <head>
+    {% block head %}
+    
+      {% block meta %}
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+      {% endblock %}
+      
+      <title>
+        {% block title -%}
+          {{ title }} _
+        {%- endblock %}
+        {% block title_prefix -%}
+          {% if 'wiki-name' in config %}{{ config['wiki-name']|e }} {% endif %}
+        {%- endblock %}
+      </title>
+      
+      {% block css %}
+
+        
+        {{ html.cssimport(make_relative("/media/css/custom.css")) }}
+        {{ html.cssimport(make_relative("/media/css/style.css")) }}
+        {{ html.cssimport(make_relative("/media/css/pygments.css")) }}
+      {% endblock %}
+      
+      {% block js %}{% endblock %}
+      
+
+    {% endblock head %}
+  </head>
+  
+  <body {% block body_attrs %}{% endblock %}>
+    {% block body %}
+      
+      {% block body_header %}
+    
+<div class="site-logo">
+  <img src="/.img/101camp_icon_v1_h64.png" height="32"/>
+  </div>
+
+        {% block crumbs %}
+          {{ breadcrumbs.crumbs(crumbs) }}
+        {% endblock crumbs %}
+      {% endblock body_header %}
+      
+      <div id="content">
+        {% block content_header %}
+        {% endblock content_header %}
+        
+        {% block content %}
+        {% endblock content %}
+        
+        {% block content_footer %}
+        {% endblock content_footer %}
+        
+        <hr class="clear" />
+
+{% if 'author_name' in config %}
+    Author: <a href="{{ config.author_web }}">
+    <img
+      class="after"
+      src="{{ config.author_display_gravatar }}"
+      alt="{{ config.author_display_name }}"
+      width="32"
+      height="32"
+    />
+    </a>
+      <i>
+        /<a href="mailto:{{ config.author_email }}">mail</a>
+      </i>
+    <b>
+      /<a href="{{ config.author_gittip }}">
+        gittip
+        </a>
+    </b>
+    <i>
+        /<a href="https://gitlab.com/{{ config.author_github }}">
+          github
+          </a>
+      </i>
+
+<br/>
+{% endif %}
+
+      </div> <!-- div#content -->
+      
+      {% block body_footer %}
+      <div id="footer">
+        <p>
+          {% if 'wiki-name' in config %}
+            {{ config['wiki-name']|e }} |
+          {% endif %}
+          
+          <a href="_list.html">ls ./</a>
+          | 
+          Powered by <a href="http://markdoc.org/">Markdoc</a>
+          + <a href="https://gitlab.com/ZoomQuiet/101.camp">gitlab</a>
+          + <a href="https://gratipay.com/~ZoomQuiet/">gittip</a>
+
+        </p>
+
+      </div>
+      {% endblock body_footer %}
+    
+    {% endblock body %}
+    
+    <hr class="clear" />
+
+<!-- all kinds of commentes srv. show area -->
+<script src="https://utteranc.es/client.js"
+        repo="101camp/http"
+        issue-term="url"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+<div class="utterances">
+
+</div>
+
+
+  </body>
+</html>
