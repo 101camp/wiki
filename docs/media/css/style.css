@@ -11,7 +11,8 @@ body {
     float: left;
     overflow: hidden;
     padding: 0 20px;
-    width: 610px; }
+    width: 695px; }
+    /* 610px for CC license*/
   body #breadcrumbs {
     border-bottom: 2px solid #f6f6f6;
     height: 28px;
