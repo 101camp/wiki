@@ -4,23 +4,24 @@ html {
 body {
   background-color: white;
   margin: 0 auto;
-  width: 650px; }
-  body #breadcrumbs, body #content, body #footer {
-    background-color: white;
-    clear: both;
-    float: left;
-    overflow: hidden;
-    padding: 0 20px;
-    width: 695px; }
+  width: 632px; }
+
+body #breadcrumbs, body #content, body #footer {
+  background-color: white;
+  clear: both;
+  float: left;
+  overflow: hidden;
+  padding: 0 20px;
+  width: 632px; }
     /* 610px for CC license*/
-  body #breadcrumbs {
-    border-bottom: 2px solid #f6f6f6;
-    height: 28px;
-    margin: 0;
-    /*150108 ZQ for appended logo 32x32*/
-padding: 0 0 0 3em;
-width: 600px; 
-  }
+body #breadcrumbs {
+  border-bottom: 2px solid #f6f6f6;
+  height: 28px;
+  margin: 0;
+  /*150108 ZQ for appended logo 32x32*/
+  padding: 0 0 0 3em;
+  width: 632px; }
+
     body #breadcrumbs li {
       float: left;
       list-style: none;
